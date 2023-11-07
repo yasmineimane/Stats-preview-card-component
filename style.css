@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --Very-dark-blue: hsl(233, 47%, 7%); /*main background*/
+    --Dark-desaturated-blue: hsl(244, 38%, 16%); /*card background*/
+    --Soft-violet: hsl(277, 64%, 61%);/*accent */
+    --White: hsl(0, 0%, 100%);
+    --Slightly-transparent-white-paragraph: hsla(0, 0%, 100%, 0.75); /*main paragraph*/
+    --Slightly-transparent-white-heading: hsla(0, 0%, 100%, 0.6); /*stat headings*/
+
+    /* Fonts */
+    --font-family-one: 'Inter', sans-serif;
+    --font-family-two: 'Lexend Deca', sans-serif;
+    --font-weight: 400;
+    --font-weight-bold: 700;
+    --font-size: 15px;
+}
+
+body {
+    background: var(--Very-dark-blue);
+    color: var(--White);
+    font-family: var(--font-family-one);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    & > div.container {
+        background: var(--Dark-desaturated-blue);
+        width: 900px;
+        height: 350px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 0.6rem;
+
+        & > div.content {
+            padding: 50px;
+            font-size: 15px;
+
+            & > h1 {
+                padding-bottom: 1.3rem;
+
+                & > span {
+                    color: var(--Soft-violet);
+                }
+            }
+
+            & > p {
+                color: var(--Slightly-transparent-white-paragraph);
+                line-height: 1.5rem;
+                font-size: 13px;
+                margin-right: 50px;
+                padding-bottom: 3.5rem;
+            }
+
+            & > div.degriees {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+                & > div.companies, div.templates, div.queries {
+
+                    & > h2 {
+                        font-size: 19px;
+                        font-weight: var(--font-weight-bold);
+                    }
+
+                    & > h5 {
+                        font-weight: var(--font-weight);
+                        font-size: 11px;
+                        text-transform: capitalize;
+                        color: var(--Slightly-transparent-white-heading);
+                        letter-spacing: 0.1rem;
+                    }
+                }
+            }
+
+        }
+
+        & > div.image {
+            height: 350px;
+            color: var(--Soft-violet);
+
+            & > img {
+                width: 100%;
+                height: 100%;
+                border-top-right-radius: 0.6rem;
+                border-bottom-right-radius: 0.6rem;
+                filter: opacity(0.2) drop-shadow(0 0 rgb(254, 18, 254));
+            }
+        }
+    }
+}
